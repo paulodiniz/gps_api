@@ -8,7 +8,7 @@ class GpsApi < Sinatra::Base
   end
 
   post '/line/:line_id/bus/:bus_code/location' do
-    b = Bus.create!(line: params[:line_id], code: params[:bus_code])
+    b = Bus.where(line: params[:line_id], code: params[:bus_code]).first_or_create
     b.to_json
   end
 
