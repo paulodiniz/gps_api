@@ -1,15 +1,13 @@
 require 'mongoid'
-require 'mongoid_spacial'
 
 class Bus
   include Mongoid::Document
-  include Mongoid::Spacial::Document
 
   field :name, type: String
   field :line, type: String
   field :code, type: String
 
-  field :position,            type: Array,    spacial: true
+  field :position,            type: Array
 
-  # spacial_index :position
+  index({ position: "2d" }, { min: -200, max: 200 })
 end

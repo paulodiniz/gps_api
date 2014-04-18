@@ -16,4 +16,10 @@ class GpsApi < Sinatra::Base
     b.to_json
   end
 
+  get '/near/:lat/:lng' do
+    if params[:lat] && params[:lng]
+      Bus.where(:position.near => [params[:lat].to_f, params[:lng].to_f,5]).to_json
+    end
+  end
+
 end

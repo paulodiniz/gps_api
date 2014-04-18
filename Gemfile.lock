@@ -29,6 +29,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
+    rake (10.3.1)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -44,4 +45,5 @@ DEPENDENCIES
   mongoid
   mongoid_spacial
   pry
+  rake
   sinatra
